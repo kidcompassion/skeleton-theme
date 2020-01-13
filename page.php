@@ -1,14 +1,14 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Starter Theme
+ * @subpackage Skeleton Theme
  * @since 1.0
  */
 ?>
 
 
 <?php get_header();?>
-
+TEST
 <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>    
     <h1><?php the_title();?></h1>

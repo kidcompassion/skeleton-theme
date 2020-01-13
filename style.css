@@ -1,0 +1,163 @@
+/*
+ Theme Name:   Skeleton Theme
+ Theme URI:    http://sallypoulsen.com
+ Description:  Bootstrap 4 Starter Theme
+ Author:       Sally Poulsen
+ Author URI:   http://sallypoulsen.com
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  skeleton
+*/
+/* Include Gandhi Font */
+@font-face {
+  font-family: 'gandhisans_bold_macroman';
+  src: url("fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.eot");
+  src: url("fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.woff") format("woff"), url("fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.ttf") format("truetype"), url("fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.svg#gandhisans_bold_macroman") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gandhisans_bolditalic_macroman';
+  src: url("fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.eot");
+  src: url("fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.woff") format("woff"), url("fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.ttf") format("truetype"), url("fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.svg#gandhisans_bolditalic_macroman") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gandhisans_italic_macroman';
+  src: url("fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.eot");
+  src: url("fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.woff") format("woff"), url("fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.ttf") format("truetype"), url("fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.svg#gandhisans_italic_macroman") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gandhisans_regular_macroman';
+  src: url("fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.eot");
+  src: url("fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.eot#iefix") format("embedded-opentype"), url("fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.woff") format("woff"), url("fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.ttf") format("truetype"), url("fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.svg#gandhisans_regular_macroman") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font-family: "gandhisans_regular_macroman", arial, sans-serif;
+  color: #01123e;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px; }
+
+h1, h2, h3 {
+  font-family: "gandhisans_bold_macroman", arial, sans-serif; }
+
+h1 {
+  font-size: 1.25rem;
+  letter-spacing: 2px; }
+  h1.center-column--title {
+    letter-spacing: 10px;
+    text-align: center;
+    padding-bottom: 10px; }
+
+h2 {
+  font-size: 1rem;
+  letter-spacing: 2px; }
+  h2.component--accordion {
+    padding: 5px 0px;
+    border-bottom: solid 1px #01123e; }
+
+img {
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%); }
+
+a {
+  color: #01123e;
+  font-family: "gandhisans_bold_macroman", arial, sans-serif; }
+
+/** Helper Classes
+*************************************************/
+.--dark-bg {
+  background-color: #01123e;
+  color: #ffffff; }
+
+.--light-bg {
+  background-color: #ffffff;
+  color: #01123e; }
+
+button, a.wp-block-button__link, a.hero__button {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: solid 1px #6dcff6;
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-family: "gandhisans_bold_macroman", arial, sans-serif;
+  letter-spacing: 3px;
+  background-color: transparent;
+  border-radius: 0px; }
+
+button:hover, a.wp-block-button__link:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #01123e;
+  border-color: #01123e;
+  color: #ffffff;
+  border-radius: 0px; }
+
+.mobile--toggle span {
+  background-color: #01123e;
+  height: 4px;
+  width: 100%;
+  display: block;
+  margin-bottom: 4px; }
+
+.primary--header {
+  background-color: #01123e; }
+  .primary--header a {
+    color: #ffffff; }
+
+.center-column--text p {
+  font-size: 0.75rem; }
+
+.logo svg {
+  max-width: 50%;
+  display: block; }
+
+.logo svg .st0:nth-child(even) {
+  fill: red; }
+
+.index-blog--article {
+  padding: 20px 0px; }
+
+.index-blog--article:hover {
+  text-decoration: none; }
+
+.index-blog--dateline {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  padding: 3px 0; }
+
+.index-blog--author {
+  display: block;
+  font-size: 0.7rem;
+  margin-bottom: 20px;
+  letter-spacing: 5px; }
+
+h3.index-blog--title {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  color: white;
+  z-index: 99; }
+
+.index-blog--image-header {
+  position: relative;
+  height: 30vh; }
+  .index-blog--image-header figure {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden; }

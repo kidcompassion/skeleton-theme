@@ -1,0 +1,20 @@
+
+
+
+  .center-column--text p{
+      font-size: 0.75rem;
+     // padding: 20px;
+
+  }
+
+
+
+
+  .logo svg {
+      max-width: 50%;
+      display: block;
+  }
+
+  .logo svg .st0:nth-child(even) {
+    fill: red;
+  }

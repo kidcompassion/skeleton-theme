@@ -1,0 +1,165 @@
+/*
+ Theme Name:   Skeleton Theme
+ Theme URI:    http://sallypoulsen.com
+ Description:  Bootstrap 4 Starter Theme
+ Author:       Sally Poulsen
+ Author URI:   http://sallypoulsen.com
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  skeleton
+*/
+
+/* Include Gandhi Font */
+
+@font-face {
+    font-family: 'gandhisans_bold_macroman';
+    src: url('fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.eot');
+    src: url('fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.woff') format('woff'),
+         url('fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/gandhisans_bold_macroman/GandhiSans-Bold-webfont.svg#gandhisans_bold_macroman') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'gandhisans_bolditalic_macroman';
+    src: url('fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.eot');
+    src: url('fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+            url('fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.woff') format('woff'),
+            url('fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.ttf') format('truetype'),
+            url('fonts/gandhisans_bolditalic_macroman/GandhiSans-BoldItalic-webfont.svg#gandhisans_bolditalic_macroman') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'gandhisans_italic_macroman';
+    src: url('fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.eot');
+    src: url('fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+            url('fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.woff') format('woff'),
+            url('fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.ttf') format('truetype'),
+            url('fonts/gandhisans_italic_macroman/GandhiSans-Italic-webfont.svg#gandhisans_italic_macroman') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'gandhisans_regular_macroman';
+    src: url('fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.eot');
+    src: url('fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.eot#iefix') format('embedded-opentype'),
+            url('fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.woff') format('woff'),
+            url('fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.ttf') format('truetype'),
+            url('fonts/gandhisans_regular_macroman/GandhiSans-Regular-webfont.svg#gandhisans_regular_macroman') format('svg');
+    font-weight: normal;
+    font-style: normal; }
+
+
+
+
+$primary-color: #01123e;
+$secondary-color: #ffe000;
+$tertiary-color: #6dcff6;
+$light-color: #ffffff;
+$dark-color: #040404;
+
+
+
+$primary-font: 'gandhisans_regular_macroman', arial, sans-serif;
+$secondary-font: 'gandhisans_bold_macroman', arial, sans-serif;
+
+
+body {
+    font-family: $primary-font;
+    color: $primary-color;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2, h3{
+    font-family: $secondary-font;
+
+}
+
+h1  {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    
+    // Center column
+    &.center-column--title{
+        letter-spacing: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+}
+
+h2 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    &.component--accordion{
+        padding: 5px 0px;
+        border-bottom: solid 1px $primary-color;
+    }
+}
+
+
+img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+
+a{
+    color: $primary-color;
+    font-family: $secondary-font;
+}
+
+
+/** Helper Classes
+*************************************************/
+
+.--dark-bg {
+    background-color: $primary-color;
+    color: $light-color;
+}
+
+.--light-bg {
+    background-color: $light-color;
+    color: $primary-color;
+}
+
+
+
+
+
+
+button, a.wp-block-button__link, a.hero__button {
+    @include transition(all, 0.5s);
+    border: solid 1px $tertiary-color;
+    color: $light-color;
+    font-size: 0.6rem;
+    font-family: $secondary-font;
+    letter-spacing: 3px;
+    background-color: transparent;
+    border-radius:0px;
+}
+
+button:hover, a.wp-block-button__link:hover {
+    @include transition(all, 0.5s);
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $light-color;
+    border-radius:0px;
+    
+}
+
+
+
+.mobile--toggle{
+    span {
+        background-color: $primary-color;
+        height: 4px;
+        width: 100%;
+        display: block;
+        margin-bottom: 4px;
+    }
+}

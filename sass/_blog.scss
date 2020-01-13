@@ -1,0 +1,45 @@
+.index-blog--article{
+    padding: 20px 0px;
+}
+
+.index-blog--article:hover{
+    text-decoration: none;
+}
+
+.index-blog--dateline{
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    padding: 3px 0;
+}
+
+.index-blog--author{
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+h3.index-blog--title{
+    font-size: 1rem;
+    letter-spacing: 3px;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    color: white;
+    z-index:99;
+}
+
+.index-blog--image-header{
+    position: relative;  
+    height: 30vh;
+     
+    figure{
+        position: absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        overflow: hidden;
+    }
+}
