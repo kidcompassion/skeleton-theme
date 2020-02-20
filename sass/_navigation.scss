@@ -1,6 +1,285 @@
-.primary--header{
-    background-color: $primary-color;
+.page header.primary, .single header.primary, .blog header.primary {
+        position: static;
+        background-color: $primary-color;
+        a{
+            color: $light-color;
+        }
+    
+}
+
+
+/**
+Background Nav Overlay, on Home in Desktop */
+
+.home header.primary{
+    @include transition(all,  0.5s);
+    background-color: transparent;
+    position: fixed;
+    left:0;
+    right:0;
+    z-index:99;
+    .custom-logo-link{
+        max-height: 0px;
+    }
     a{
         color: $light-color;
+    }
+    &:after{
+        @include transition(all,  0.5s);
+        content:'';
+        position: absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        z-index:-1;
+        
+        opacity: 0.5;
+        
+        
+    }
+    &.bg-overlay:after{
+        @include transition(all,  0.5s);
+        content:'';
+        position: absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        z-index:-1;
+        background:$primary-color;
+        opacity: 0.5;
+    }
+}
+
+//Logo
+
+.custom-logo-link{
+    img {
+        max-width: 80%;
+        height: auto;
+        @media screen and (min-width: $breaksmall) {
+            max-width:60%;
+        }
+        @media screen and (min-width: $breakmedium) {
+            max-width: 80%;
+        }
+    }
+}
+
+
+
+
+// Mobile nav
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 9999;
+
+    span{
+        height: 4px;
+        width: 100%;
+        margin-bottom: 4px;
+        display: flex;
+        background-color: $light-color;
+        @include transition(all, 0.5s);
+        &:first-of-type{
+            
+            transform: translateY(0) rotate(0deg);
+        }
+        &:nth-of-type(2){
+            
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        &:last-of-type{
+            
+            transform: translateY(0) rotate(0deg);
+        }
+        
+    }
+
+    &.expand{
+        span{
+            @include transition(all, 0.5s);
+            height: 4px;
+            width: 100%;
+            margin-bottom: 4px;
+            display: flex;
+            background-color: $light-color;
+            &:first-of-type{
+                
+                transform: translateY(8px) rotate(45deg);
+            }
+            &:nth-of-type(2){
+                
+                opacity: 0;
+            }
+            &:last-of-type{
+                
+                transform: translateY(-8px) rotate(-405deg);
+            }
+            
+        }
+    }
+
+
+    // Hides hamburger in larger screens
+    @media screen and (min-width: $breaklarge) {
+        display: none;
+    }
+
+}
+
+
+//Desktop NAV
+
+
+
+nav.primary--nav {
+    // Nav in mobile, before expand 
+    @include transition(all, 0.5s);
+    position: fixed;
+    top:0px;
+    width: 100vw;
+    height: 100vh;
+    
+    z-index:-1;
+    right: -100%;
+
+    // Nav in mobile, after expand
+    &.expand{
+        background-color: $primary-color;
+        right:0;
+        width: 100vw;
+        @include transition(all, 0.5s);
+        z-index:99;
+
+    }
+    // Reset nav to behave correctly in desktop
+    @media screen and (min-width: $breaklarge) {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        z-index: 1;
+    }
+
+
+
+    ul {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        padding: 20px;
+        @media screen and (min-width: $breaklarge) {
+            flex-direction: row;
+        }
+        
+        li {
+            list-style-type: none;
+            flex-grow:1;
+            display: flex;
+           
+            
+            &:hover{
+                text-decoration: none; 
+            }
+
+            &.menu-item-has-children a:hover{
+                border-bottom: 0px;
+            }
+            a{
+                @include transition(all, 0.25s);
+                font-size: 14px;
+                display: flex;
+                border-bottom: solid 1px transparent;
+                &:before{
+                    @include transition(all, 0.25s);
+                    padding-right: 2px;
+                    opacity:0;
+                    content:'•';
+                    color: $secondary-color;
+                }
+                &:hover{
+                    @include transition(all, 0.25s);
+                    text-decoration: none;
+                    border-bottom: solid 1px $secondary-color;
+                    
+                
+                    &:before {
+                        @include transition(all, 0.25s);
+                        padding-right: 2px;
+                        opacity:1;
+                        content:'•';
+                        color: $secondary-color;
+                    }
+                }   
+            }
+        }
+    }
+    
+}
+//MObile
+nav.primary--nav {
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: $breaklarge) {
+            flex-direction: row;
+        }
+        li{
+            display: flex;
+            text-align: left;
+            position: relative;
+            flex-direction: column;
+            @media screen and (min-width: $breaklarge) {
+               // align-items: center;
+                flex-direction: column;
+            }
+            a{
+                
+                margin-left: 4px;
+                font-family: 'gandhisans_bold_macroman', sans-serif;
+                font-size: 1em;
+                padding: 3px 0px 3px 3px;
+            }
+            
+            .menu-item-has-children:hover {
+                
+            }
+            &:hover  > ul{
+                @media screen and (min-width: $breaklarge) {
+                    display: flex;
+                }
+            }
+            ul{
+                
+                padding-inline-start: 25px;
+                @media screen and (min-width: $breaklarge) {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    background: $primary-color;
+                    padding: 0;
+                    width: 250px;
+                    border-top: solid 1px $secondary-color;
+                }
+                li{
+                    
+                    
+
+                    a {
+                        font-family: $primary-font;
+                    }
+                }
+            }
+        }
     }
 }

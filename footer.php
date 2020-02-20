@@ -1,8 +1,7 @@
-<footer>
-    <?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'container_class'=>'primary--footer', 'container'=> 'nav' ) ); ?>
+<footer class="main--footer --dark-bg">
+Copyright AJB Safety Consulting Services Ltd. <?php echo date("Y"); ?>
+ - Legal
 </footer>
-
-
 
 <?php wp_footer();?>
 </body>

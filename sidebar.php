@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <?php wp_head();?>
-</head>
-<body>
+<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('widgetized-area')) : else : ?>
 
-<header>
-    HEADER
-</header>
+<div class="pre-widget">
+    <p><strong>Widgetized Area</strong></p>
+    <p>This panel is active and ready for you to add some widgets via the WP Admin</p>
+</div>
+
+<?php endif; ?>

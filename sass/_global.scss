@@ -55,25 +55,40 @@
 
 
 
-
+// COLORS
 $primary-color: #01123e;
 $secondary-color: #ffe000;
 $tertiary-color: #6dcff6;
 $light-color: #ffffff;
 $dark-color: #040404;
 
-
-
+// FONTS
 $primary-font: 'gandhisans_regular_macroman', arial, sans-serif;
 $secondary-font: 'gandhisans_bold_macroman', arial, sans-serif;
+$icon-font: 'FontAwesome', arial, sans-serif;
+
+//BREAKPOINTS
+
+$breakxsmall: 360px;
+$breaksmall: 720px;
+$breakmedium: 960px;
+$breaklarge: 1200px;
+$breakxlarge: 1440px;
 
 
-body {
+body { 
     font-family: $primary-font;
     color: $primary-color;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0px;
     padding: 0px;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-align: left;
+    margin: auto;
+    @media screen and (min-width: $breakxlarge) {
+        font-size: 18px;
+    }
 }
 
 h1, h2, h3{
@@ -82,8 +97,8 @@ h1, h2, h3{
 }
 
 h1  {
-    font-size: 1.25rem;
-    letter-spacing: 2px;
+    font-size: 2em;
+    letter-spacing: 0px;
     
     // Center column
     &.center-column--title{
@@ -95,44 +110,93 @@ h1  {
 
 h2 {
     font-size: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
+    font-family: $primary-font;
     &.component--accordion{
         padding: 5px 0px;
         border-bottom: solid 1px $primary-color;
+    }
+    span {
+        color: $secondary-color;
     }
 }
 
 
 img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-  }
+    max-width: 100%;
+}
 
 a{
     color: $primary-color;
-    font-family: $secondary-font;
+    font-family: $primary-font;
 }
 
+
+i{
+    font-family: $icon-font;
+    font-style: normal;
+}
+
+
+
+.wp-block-column:nth-of-type(odd){
+    padding: 20px;
+    @media screen and (min-width: $breaklarge) {
+        padding-left: 80px;
+    }
+}
+
+.wp-block-column:nth-of-type(even){
+    padding: 20px;
+    @media screen and (min-width: $breaklarge) {
+        padding-right: 80px;
+    }
+}
 
 /** Helper Classes
 *************************************************/
+.hide {
+    display: none!important;
+}
 
-.--dark-bg {
+.show {
+    display: block!important;
+}
+
+
+.wp-block-columns{
+    margin-bottom:0;
+}
+
+
+
+
+.--dark-bg, .dark-color-scheme {
     background-color: $primary-color;
     color: $light-color;
+    a{
+        color: $light-color;
+    }
 }
 
-.--light-bg {
+.--light-bg, .light-color-scheme {
     background-color: $light-color;
     color: $primary-color;
+    a{
+        color: $dark-color;
+    }
 }
 
 
 
 
+.dk--btn a.wp-block-button__link{
+    border: solid 1px $primary-color;
+    color: $primary-color;
+    font-size: 1em;
+}
 
-
-button, a.wp-block-button__link, a.hero__button {
+button, a.wp-block-button__link, a.hero__button, input[type='submit'] {
     @include transition(all, 0.5s);
     border: solid 1px $tertiary-color;
     color: $light-color;
@@ -141,25 +205,23 @@ button, a.wp-block-button__link, a.hero__button {
     letter-spacing: 3px;
     background-color: transparent;
     border-radius:0px;
+    position: relative;
 }
 
-button:hover, a.wp-block-button__link:hover {
+button:hover, a.wp-block-button__link:hover, input[type='submit']:hover {
     @include transition(all, 0.5s);
     background-color: $primary-color;
     border-color: $primary-color;
     color: $light-color;
     border-radius:0px;
-    
-}
-
-
-
-.mobile--toggle{
-    span {
-        background-color: $primary-color;
-        height: 4px;
-        width: 100%;
-        display: block;
-        margin-bottom: 4px;
+    text-decoration: none;
+    &:after{
+        @include transition(all, 0.5s);
+        font-family: 'FontAwesome';
+        content:'\f054';
+        position: absolute;
+        right: 10px;
     }
 }
+
+

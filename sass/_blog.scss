@@ -1,3 +1,23 @@
+.component--blog-index {
+    padding-top: 40px;
+    h1{
+        border-bottom: solid 1px $primary-color;
+        margin-bottom: 20px;
+    }
+
+    .meta {
+        font-family: 'gandhisans_italic_macroman';
+        color: #666;
+    }
+    h2{
+        font-size: 1.75em;
+    }
+
+    .nav-previous a, .nav-next a{   
+        font-family: 'gandhisans_bold_macroman';
+    }
+}
+
 .index-blog--article{
     padding: 20px 0px;
 }
